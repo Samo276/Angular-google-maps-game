@@ -1,0 +1,42 @@
+<h2>Punkty: {{highScore}}</h2>
+<map-view    [latitude]="currentUserLatitude" [longitude]="currentUserLongitude" [zoom]="MapZOOM">
+    <map-marker *ngFor="let item of data" [latitude]=item.lat [longitude]=item.lon></map-marker>
+</map-view>
+
+
+<div style="background-color:darkslategray;padding: 10px;">
+    <div style="background-color:black;padding-top:5px;padding-left:10px;padding-right:10px;padding-bottom:10px;height: 100px;">   
+      <p #GreenText style="color: green;"></p>
+      
+    </div>
+    <div #buttonPanel><!--<ng-container  *ngIf="AnswerButtonsActive">-->
+      <button (click)="answerGivenEqualsTrue(ClosestLocation[0].id)" class="greenbutton">True</button>
+      <button (click)="answerGivenEqualsFalse(ClosestLocation[0].id)" class="greenbutton">False</button>      
+    </div> 
+</div>     
+
+<!--
+<p [innerHTML]="ClosestLocation |json"></p>
+
+<div *ngFor="let element of ClosestLocation">
+  {{element | json}}
+</div>
+<div *ngFor="let element of ClosestLocation">
+  {{element.question}}
+</div>
+
+<div *ngFor="let post of data">
+  {{post.question}}
+</div>
+
+ testowanie masterpacka
+<h2 >Punkty: {{Everything.Score | json}}</h2>
+<map-view    [latitude]="currentUserLatitude" [longitude]="currentUserLongitude" [zoom]="14">
+    <map-marker *ngFor="let item of Everything.QuestItems" [latitude]=item.lat [longitude]=item.lon></map-marker>
+</map-view>
+<div *ngFor="let post of Everything">
+  {{post | json}}
+</div>
+</div>
+<div *ngIf="Everything">
+-->
